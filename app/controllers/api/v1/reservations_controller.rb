@@ -27,4 +27,21 @@
      }
    end
 
+ 	def update
+   	@reservation = Reservation.find_by_booking_code!( params[:booking_code] )
+   	@reservation.update( 	:customer_name => params[:customer_name],
+                      		:customer_phone => params[:customer_phone] )
+
+	 	render :json => { :message => "更新成功" }
+ 	end
+
+ 	def destroy
+   	@reservation = Reservation.find_by_booking_code!( params[:booking_code] )
+   	@reservation.destroy
+
+	 	render :json => { :message => "已取消定位" }
+ 	end
+
+
+
 end
