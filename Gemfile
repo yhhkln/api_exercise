@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'rest-client'
 gem "devise"
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 
 
 group :development, :test do
