@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   namespace :api, :defaults => { :format => :json } do
     namespace :v1 do
       get "/trains"  => "trains#index", :as => :trains
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
     end
   end
 
+  root "welcome#index"
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :cities do
     member do
